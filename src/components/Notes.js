@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useNavigate } from "react-router-dom";
+import "../stylesheets/Notes.css"
 
 const Notes = (props) => {
   const navigate = useNavigate();
@@ -21,17 +22,24 @@ const Notes = (props) => {
   }, []);
 
   return (
-    <Container className="pt-3" fluid style={{ backgroundColor: "black" }}>
-      <Row className="justify-content-center">
-        {notes.length === 0 && "No Notes to display"}
+    <Container className="notes-container" fluid>
+      <h3 className="notes-title">Your Notes</h3>
+      <Row className="notes-row px-3">
+        {notes.length === 0 && <p className="no-notes">No notes to display</p>}
         {notes &&
-          notes.map((note) => {
-            return (
-              <Col xs={11} sm={8} md={6} lg={4} xl={3} xxl={2} key={note._id}>
-                <Noteitem note={note} showAlert={props.showAlert} />
-              </Col>
-            );
-          })}
+          notes.map((note) => (
+            <Col
+              xs={11}
+              sm={6}
+              md={4}
+              lg={3}
+              xl={3}
+              key={note._id}
+              className="d-flex"
+            >
+              <Noteitem note={note} />
+            </Col>
+          ))}
       </Row>
     </Container>
   );

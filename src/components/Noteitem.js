@@ -4,6 +4,7 @@ import NoteContext from "../context/notes/NoteContext";
 import { useContext, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import "../stylesheets/Noteitem.css"
 
 const Noteitem = (props) => {
   const [show, setShow] = useState(false);
@@ -16,7 +17,6 @@ const Noteitem = (props) => {
   const handleDelete = (e) => {
     e.preventDefault();
     deleteNote(note._id);
-    props.showAlert("Noted Deleted", "danger");
   };
 
   const [eNote, seteNote] = useState({
@@ -29,7 +29,6 @@ const Noteitem = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     editNote(eNote.id, eNote.title, eNote.description, eNote.tag);
-    props.showAlert("Note Updated!", "success");
   };
 
   const onChange = (e) => {
@@ -42,7 +41,7 @@ const Noteitem = (props) => {
   const { note } = props;
   return (
     <>
-      <Card className="mb-3">
+      <Card className="mb-3 note-card">
         <Card.Img
           variant="top"
           src="https://static.vecteezy.com/system/resources/previews/022/425/727/original/river-landscape-illustration-with-view-mountains-green-fields-trees-and-forest-surrounding-the-rivers-in-flat-cartoon-hand-drawn-templates-vector.jpg"

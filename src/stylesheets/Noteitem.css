@@ -1,0 +1,118 @@
+/* Card Styling */
+.note-card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #2c2c2c;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.note-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Image */
+.note-card .card-img-top {
+    height: 160px;
+    object-fit: cover;
+    filter: brightness(85%);
+    transition: filter 0.3s ease;
+}
+
+.note-card .card-img-top:hover {
+    filter: brightness(100%);
+}
+
+/* Card Content */
+.note-card .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.note-card .card-text {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 12px;
+}
+
+/* Buttons */
+.note-card .btn-primary {
+    background-color: #4e9af1;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.note-card .btn-primary:hover {
+    background-color: #3278c4;
+}
+
+.note-card i {
+    cursor: pointer;
+    color: #aaa;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.note-card i:hover {
+    color: #ff4b5c;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #2c2c2c;
+    border-radius: 10px;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #333;
+}
+
+.modal-title {
+    color: #eaeaea;
+    font-weight: 500;
+}
+
+/* Input Fields */
+.form-control {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1px solid #444;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+.form-control:focus {
+    background-color: #2b2b2b;
+    border-color: #4e9af1;
+    box-shadow: 0 0 0 0.15rem rgba(78, 154, 241, 0.3);
+}
+
+/* Modal Buttons */
+.btn-secondary {
+    background-color: #555;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+}
+
+.btn-primary:disabled {
+    background-color: #3b3b3b;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
